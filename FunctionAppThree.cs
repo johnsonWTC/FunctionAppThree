@@ -17,7 +17,11 @@ namespace FunctionAppThree
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = "{name}")] HttpRequest req,
             string name)
         {
-            return new OkObjectResult($"{name}, hello man");
+            Man man = new Man();
+            man.name = name;
+            return new OkObjectResult(man);
         }
     }
+
+    
 }
