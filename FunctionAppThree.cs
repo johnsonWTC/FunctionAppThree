@@ -14,11 +14,11 @@ namespace FunctionAppThree
     {
         [FunctionName("FunctionAppThree")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = "{Name}")] HttpRequest req,
-            string Name)
+            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = "{name}")] HttpRequest req,
+            string name)
         {
            
-            return new OkObjectResult(responseMessage);
+            return new OkObjectResult($"{name}, hello man");
         }
     }
 }
